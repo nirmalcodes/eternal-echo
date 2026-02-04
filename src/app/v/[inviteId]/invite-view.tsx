@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import confetti from 'canvas-confetti';
 import { Heart } from 'lucide-react';
-import type { Invite } from '@/lib/types';
+import type { SerializableInvite as Invite } from '@/lib/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { acceptInvite } from './actions';
@@ -12,9 +12,23 @@ interface InviteViewProps {
   invite: Invite;
 }
 
+const noMessages = [
+  'No',
+  'Are you sure?',
+  'Really sure?',
+  'Think again!',
+  'Last chance!',
+  'Surely not?',
+  'You might regret it!',
+  'Give it a shot?',
+  'But... why?',
+  'I will be very sad :(',
+];
+
 export default function InviteView({ invite }: InviteViewProps) {
   const [isAccepted, setIsAccepted] = useState(invite.status === 'accepted');
   const [noButtonStyle, setNoButtonStyle] = useState({});
+  const [noCount, setNoCount] = useState(0);
   const noButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -73,12 +87,18 @@ export default function InviteView({ invite }: InviteViewProps) {
     });
   };
 
+  const handleNoInteraction = () => {
+    if (isAccepted) return;
+    setNoCount((currentCount) => (currentCount + 1) % noMessages.length);
+    moveNoButton();
+  };
+
   return (
     <Card className="w-full max-w-md shadow-2xl relative overflow-hidden">
       {isAccepted ? (
         <div className="text-center p-8 md:p-12">
           <Heart className="w-16 h-16 text-primary mx-auto animate-pulse" />
-          <h2 className="text-3xl font-bold font-headline mt-4">She said Yes!</h2>
+          <h2 className="text-3xl font-bold font-headline mt-4">They said Yes!</h2>
           <p className="text-muted-foreground mt-2">
             Let the celebrations begin!
           </p>
@@ -101,9 +121,10 @@ export default function InviteView({ invite }: InviteViewProps) {
               size="lg"
               variant="outline"
               style={noButtonStyle}
-              onMouseEnter={moveNoButton}
+              onMouseEnter={handleNoInteraction}
+              onClick={handleNoInteraction}
             >
-              No
+              {noMessages[noCount]}
             </Button>
           </CardFooter>
         </>

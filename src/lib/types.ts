@@ -9,3 +9,7 @@ export interface Invite {
   status: 'pending' | 'accepted';
   createdAt: Timestamp;
 }
+
+export type SerializableInvite = Omit<Invite, 'createdAt'> & {
+  createdAt: string;
+};
