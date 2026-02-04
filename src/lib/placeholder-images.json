@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "A soft focus image of pink roses.",
+      "imageUrl": "https://images.unsplash.com/photo-1638871894014-047605c91c16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxyb3NlcyUyMGNvdXBsZXxlbnwwfHx8fDE3NzAyMTMyOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "roses couple"
+    },
+    {
+      "id": "feature-personalize",
+      "description": "A person writing a letter with a fountain pen.",
+      "imageUrl": "https://images.unsplash.com/photo-1529251333259-d36cccaf22ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3cml0aW5nJTIwbGV0dGVyfGVufDB8fHx8MTc3MDIxMzI5MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "writing letter"
+    },
+    {
+      "id": "feature-interactive",
+      "description": "A close up of two hands almost touching.",
+      "imageUrl": "https://images.unsplash.com/photo-1554275198-7a6481ef878f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxoYW5kcyUyMGNvdXBsZXxlbnwwfHx8fDE3NzAyMTMyOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hands couple"
+    },
+    {
+      "id": "feature-notification",
+      "description": "A smartphone screen with a notification bubble.",
+      "imageUrl": "https://images.unsplash.com/photo-1526045612212-70caf35c14df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwaG9uZSUyMG5vdGlmaWNhdGlvbnxlbnwwfHx8fDE3NzAyMTMyOTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "phone notification"
+    }
+  ]
 }
